@@ -1,0 +1,44 @@
+=== Mis notas del proyecto ===
+
+=> Creamosmos el proyecto
+- npm init --> Damos enter a todo no agregamos inf o podemos sustiruir por npm init -y
+
+=> Instalamos tailwind como PostCSS
+Instalamos las librerias
+- npm install -D tailwindcss postcss autoprefixer
+
+*Creamos la capera src and public con sus css and archivos
+- traveltailwind/src/css/tailwind.css
+- traveltailwind/public/css/tailwind.css
+
+*Inicializamos tailwind 
+npx tailwindcss init --> Esto creara el archivo tailwind.config.js
+
+*El arachivo tailwind.config.js lo modificamos para que se vea asi
+module.exports = {
+  content: ["./public/index.html", "./src/**/*.{html,js}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+
+*Copiamos las directivas de tailwind en el css
+- traveltailwind/src/css/tailwind.css
+
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+*Creamos index.html en public
+- traveltailwind/public/index.html
+*Creamos la maqueta basica e linkiamos el tailwind.css de public
+<link rel="stylesheet" href="../public/css/tailwind.css">
+
+=> Aqui hacemos nuestro build --> Este es necesario para usar los estilos
+Ejecutamos este comando
+- npx tailwindcss -i ./src/css/tailwind.css -o ./public/css/tailwind.css --watch
+
+*Para automatizar el build lo hacemos en el archivo de package.json de la siguiente manera
+=> "tw:build": "tailwindcss -i ./src/css/tailwind.css -o ./public/css/tailwind.css --watch1"
+Anhadimos la linea anterio
