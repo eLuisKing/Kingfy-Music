@@ -15,7 +15,7 @@ module.exports = {
 			}),
       textColor:{
 				'white': '#f8fafc',
-        'blacl': '#171717',
+        'black': '#171717',
         'gray': '#cbd5e1',
         'base1-t': '#1d4ed8',
         'base2-t': '#2563eb'
